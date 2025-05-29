@@ -1,0 +1,59 @@
+Scanner: OpenVAS Community Edition 
+Scan Target: 127.0.0.1 (localhost)
+Scan Type: Full Scan
+Scan Duration: 45 minutes
+
+
+SUMMARY:
+- Total Vulnerabilities Detected: 6
+- High Severity: 2
+- Medium Severity: 3
+- Low Severity: 1
+
+
+CRITICAL VULNERABILITIES:
+
+1. Outdated OpenSSH Version
+   - CVSS Score: 9.8 (Critical)
+   - Description: The version of OpenSSH installed is vulnerable to remote code execution.
+   - Recommended Fix: Update OpenSSH to the latest secure version using your package manager.
+   - Reference: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-51312
+
+2. Unpatched SMB Service
+   - CVSS Score: 8.6 (High)
+   - Description: SMBv1 is enabled and unpatched, making the system susceptible to WannaCry-style attacks.
+   - Recommended Fix: Disable SMBv1 and update to SMBv2/3 with latest patches.
+
+
+
+MEDIUM SEVERITY VULNERABILITIES:
+
+3. Weak SSL/TLS Ciphers Enabled
+   - CVSS Score: 6.5
+   - Description: The system supports weak encryption ciphers for TLS connections.
+   - Fix: Reconfigure the SSL/TLS settings to use only strong ciphers.
+
+4. Apache Server Information Disclosure
+   - CVSS Score: 6.1
+   - Description: Apache version and OS details are publicly visible in HTTP response headers.
+   - Fix: Hide server headers via apache config.
+
+5. Outdated Mozilla Firefox
+   - CVSS Score: 5.9
+   - Description: The installed version of Firefox is outdated and contains multiple known vulnerabilities.
+   - Fix: Update Firefox to the latest release.
+
+
+LOW SEVERITY VULNERABILITY:
+
+6. ICMP Timestamp Response Enabled
+   - CVSS Score: 3.3
+   - Description: ICMP timestamp requests are enabled, which could allow an attacker to perform system reconnaissance.
+   - Fix: Block ICMP timestamp responses via firewall rules.
+
+
+PRIORITIZATION:
+- Immediate patching recommended for OpenSSH and SMB vulnerabilities.
+- Schedule updates for Apache and Firefox.
+- Hardening recommended for ICMP and SSL configuration.
+
